@@ -79,6 +79,14 @@ button:focus-visible {
   height: 100vh;
 }
 
+.hero-wrapper {
+  z-index: 2 !important;
+}
+
+.hero-stripe {
+  z-index: 1 !important;
+}
+
 @media screen and (max-width: 1023px){
   .hero {
     height: 80vh;
@@ -97,19 +105,15 @@ button:focus-visible {
   .hero .hero-head{
     font-size: 30px;
   } 
+  
   .hero .hero-subhead {
     margin-top: 5px;
     font-size: 27px;
   }
-    
-  .hero-wrapper {
-    z-index: 2;
-  }
 
   .hero-stripe {
     background-color: hsla(0, 0%, 100%, .75);
-    z-index: 1;
-  }
+    }
 }
 
 .contact .contact-img {

@@ -38,7 +38,7 @@ const Landing = ()=> {
                         <button className="text-rose-600 px-4 py-2 rounded-md bg-white">Know More</button>
                     </div>
                 </div>
-                <div className="hero-stripe h-full -z-10 w-full absolute"></div>
+                <div className="hero-stripe h-full w-full absolute "></div>
             </div>
             <div className="contact mt-20 px-7 md:relative">
                 <div className="contact-card flex flex-col md:items-center md:flex-row">
