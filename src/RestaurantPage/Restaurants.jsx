@@ -1,5 +1,4 @@
 import {useState} from 'react';
-import Header from '../header';
 import Footer from '../footer';
 import Restaurantcard from './Restaurantcard';
 import restaurantsData from './restaurantData';
@@ -12,12 +11,10 @@ const Restaurants = ()=> {
     }
     const getRating = (e) => {
         setRating(e.target.value);
-        // console.log(rating);
         
     }
     return (
         <>  
-            <Header/>
             <div className="restaurants mt-28">
                 <div className="search-field flex flex-col items-center md:flex-row md:justify-between px-10 gap-10">
                     <input onChange={updateRestaurants} className="border border-gray-300 py-2 px-1" type="text" placeholder="Search restaurants..."/>

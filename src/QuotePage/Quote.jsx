@@ -1,4 +1,3 @@
-import Header from '../header';
 import Footer from '../footer';
 import QuoteCard from './QuoteCard';
 const Quote = ()=>{
@@ -126,7 +125,6 @@ const Quote = ()=>{
     ]
     return (
         <>
-            <Header/>
            <div className="qoute-cont flex flex-col gap-16 mt-28">
                 {
                     quoteData.map((item, index)=>(

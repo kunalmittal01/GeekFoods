@@ -1,7 +1,8 @@
-import {useRef,useState} from 'react';
+import {useRef,useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
-const Header = () =>{
+const Header = (props) =>{
     const [appear,setAppear] = useState(false);
+    const[active,setActive] = useState("Home");
     const sidebarRef = useRef(null);
     const showSidebar = ()=> {
         if(!appear) {
@@ -13,8 +14,12 @@ const Header = () =>{
             setAppear(false);
         }
     }
+    const handleClick =(e)=>{
+        setActive(e.target.textContent);
+    }
+
     return (
-        <div className="header z-10 fixed top-0 w-full py-3 px-7 bg-gray-900">
+        <div onClick={handleClick} className="header z-10 fixed top-0 w-full py-3 px-7 bg-gray-900">
             <div className="header-wrapper flex items-center justify-between">
             <Link to="/"><div className="header-left flex items-center gap-2">
                     <img src="	https://flowbite.com/docs/images/logo.svg" alt="" />
@@ -23,14 +28,14 @@ const Header = () =>{
             </Link>    
                 <div className="header-right flex w-2/3 justify-end md:justify-between gap-4">
                     <div className="header-comp hidden items-center gap-5 md:flex">
-                       <Link to="/"><p className="text-white">Home</p></Link>
-                       <Link to="/Quote"><p className="text-white">Quote</p></Link>
-                       <Link to="/Restaurants"><p className="text-white">Restaurants</p></Link>
-                        <p className="text-white">Foods</p>
-                        <Link to="/Contact"><p className="text-white">Contact</p></Link>
+                       <Link to="/"><p onClick={handleClick} id="1" className={`text-white ${active === "Home" ? 'active-page' : ''}`}>Home</p></Link>
+                       <Link to="/Quote"><p id="2" onClick={handleClick} className={`text-white ${active === "Quote" ? 'active-page' : ''}`}>Quote</p></Link>
+                       <Link to="/Restaurants"><p id="3" onClick={handleClick} className={`text-white ${active === "Restaurants" ? 'active-page' : ''}`}>Restaurants</p></Link>
+                        <p className={`text-white ${active === "Foods" ? 'active-page' : ''}`} onClick={handleClick} id="4">Foods</p>
+                        <Link to="/Contact"><p id="5" onClick={handleClick} className={`text-white ${active === "Contact" ? 'active-page' : ''}`}>Contact</p></Link>
                     </div>
                     <div className="header-btn flex items-center gap-5">
-                        <button className="text-white bg-sky-600 md:w-36">Get started</button>
+                        <button className="text-white bg-sky-600 py-2 px-3 rounded-md hover:bg-sky-700 md:w-36">Get started</button>
                         <svg onClick={showSidebar} className="hover:cursor-pointer w-5 text-white block h-5 md:hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"></path></svg>
                     </div>
                 </div>

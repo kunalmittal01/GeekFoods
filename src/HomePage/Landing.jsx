@@ -1,7 +1,8 @@
-import Header from '../header';
 import Feedback from './feedback';
 import Footer from '../footer';
 import {Link} from 'react-router-dom';
+import { useEffect } from 'react';
+
 const Landing = ()=> {
     const feedData = [
         {
@@ -25,7 +26,7 @@ const Landing = ()=> {
     ]
     return (
         <>
-            <Header/>
+            
             <div className="hero flex items-center">
                 <div className="hero-wrapper pl-12">
                     <p className="hero-head text-5xl font-bold text-center">Let us find your</p>
@@ -33,8 +34,8 @@ const Landing = ()=> {
                     <p className="text-xl mt-5 text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
                     <p className="text-xl mt-1 text-center">Nesciunt illo tenetur fuga ducimus numquam ea!</p>
                     <div className="hero-btn mt-6 flex gap-5">
-                        <Link to="/Restaurants"><button className="ease duration-300 hover:cursor-pointer hover:bg-rose-800 bg-rose-600 text-white">Search Now</button></Link>
-                        <button className="text-rose-600 bg-white">Know More</button>
+                        <Link to="/Restaurants"><button className="ease duration-300 hover:cursor-pointer hover:bg-rose-800 px-4 py-2 rounded-md bg-rose-600 text-white">Search Now</button></Link>
+                        <button className="text-rose-600 px-4 py-2 rounded-md bg-white">Know More</button>
                     </div>
                 </div>
                 <div className="hero-stripe h-full -z-10 w-full absolute"></div>
